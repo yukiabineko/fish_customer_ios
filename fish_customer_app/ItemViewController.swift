@@ -23,7 +23,7 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
         cell.setStatus(
-            image: UIImage(named: "aji")!,
+            image: UIImage(named: images[indexPath.row])!,
             name: items[indexPath.row],
             price: prices[indexPath.row])
         cell.order.tag = indexPath.row
@@ -33,11 +33,7 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     let items = ["あじ", "さんま", "さば"]
     let prices = ["100", "99", "380"]
-    let images = [
-       UIImage(named: "aji"),
-       UIImage(named: "saba"),
-       UIImage(named: "sn")
-    ]
+    let images = ["aji","san", "saba"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
