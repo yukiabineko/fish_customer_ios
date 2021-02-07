@@ -19,6 +19,7 @@
 		007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */; };
 		00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */; };
 		00A36CFF25CF87F600F3B5E4 /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */; };
+		CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
+		CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				0051771525CE729C00902225 /* ViewController.swift */,
 				00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */,
 				003733ED25CEDC8300858951 /* ItemViewController.swift */,
+				CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */,
 				007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */,
 				00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */,
 				0051771725CE729C00902225 /* Main.storyboard */,
@@ -275,6 +278,7 @@
 				003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */,
 				00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */,
 				007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */,
+				CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */,
 				0051771225CE729C00902225 /* AppDelegate.swift in Sources */,
 				0051771425CE729C00902225 /* SceneDelegate.swift in Sources */,
 			);
