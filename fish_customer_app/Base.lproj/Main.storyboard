@@ -209,9 +209,6 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                     <state key="normal" title="注文" backgroundImage="san"/>
-                                                                    <connections>
-                                                                        <action selector="orderItem:" destination="sdk-AD-Uji" eventType="touchUpInside" id="Wmc-TB-erO"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemGray4Color"/>
