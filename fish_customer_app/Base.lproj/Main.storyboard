@@ -92,14 +92,98 @@
                     <view key="view" contentMode="scaleToFill" id="n0J-0R-Oav">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-An-SZ2">
+                                <rect key="frame" x="0.0" y="88" width="390" height="1094"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-9f-3vn">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYP-Dp-6bh">
+                                        <rect key="frame" x="0.0" y="138" width="390" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-i0-Us2">
+                                        <rect key="frame" x="0.0" y="276" width="390" height="128"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sample@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dg6-pS-q4O">
+                                                <rect key="frame" x="10" y="10" width="370" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dg6-pS-q4O" secondAttribute="trailing" constant="10" id="I5V-9T-b4c"/>
+                                            <constraint firstItem="dg6-pS-q4O" firstAttribute="leading" secondItem="NqZ-i0-Us2" secondAttribute="leading" constant="10" id="JgT-lq-TKe"/>
+                                            <constraint firstAttribute="bottom" secondItem="dg6-pS-q4O" secondAttribute="bottom" constant="10" id="Sz6-8n-pQl"/>
+                                            <constraint firstItem="dg6-pS-q4O" firstAttribute="top" secondItem="NqZ-i0-Us2" secondAttribute="top" constant="10" id="ijp-0e-out"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trq-gq-3rc">
+                                        <rect key="frame" x="0.0" y="414" width="390" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI4-DH-LZG">
+                                        <rect key="frame" x="0.0" y="552" width="390" height="128"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytc-nR-MQQ">
+                                                <rect key="frame" x="10" y="10" width="370" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ytc-nR-MQQ" secondAttribute="trailing" constant="10" id="Nc8-Kq-4bP"/>
+                                            <constraint firstItem="ytc-nR-MQQ" firstAttribute="top" secondItem="xI4-DH-LZG" secondAttribute="top" constant="10" id="V3T-VU-Ncr"/>
+                                            <constraint firstAttribute="bottom" secondItem="ytc-nR-MQQ" secondAttribute="bottom" constant="10" id="Ziz-VR-CYG"/>
+                                            <constraint firstItem="ytc-nR-MQQ" firstAttribute="leading" secondItem="xI4-DH-LZG" secondAttribute="leading" constant="10" id="fJZ-hc-Tjr"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSa-4t-8HB">
+                                        <rect key="frame" x="0.0" y="690" width="390" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0M-On-dfZ">
+                                        <rect key="frame" x="0.0" y="828" width="390" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="ログイン"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6w-qn-pNo">
+                                        <rect key="frame" x="0.0" y="966" width="390" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <state key="normal" title="新規登録はこちら">
+                                            <color key="titleColor" red="0.94625195510000004" green="1" blue="0.96175957879999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="k8H-nU-e57"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="M2w-An-SZ2" firstAttribute="top" secondItem="k8H-nU-e57" secondAttribute="top" id="4B8-yA-slg"/>
+                            <constraint firstItem="k8H-nU-e57" firstAttribute="trailing" secondItem="M2w-An-SZ2" secondAttribute="trailing" id="Dw6-Az-f6F"/>
+                            <constraint firstItem="M2w-An-SZ2" firstAttribute="height" secondItem="n0J-0R-Oav" secondAttribute="height" multiplier="0.85545" id="NPS-0Z-n47"/>
+                            <constraint firstItem="k8H-nU-e57" firstAttribute="bottom" secondItem="M2w-An-SZ2" secondAttribute="bottom" id="mFV-DA-tcN"/>
+                            <constraint firstItem="M2w-An-SZ2" firstAttribute="leading" secondItem="k8H-nU-e57" secondAttribute="leading" id="tFz-me-lsp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ログイン" id="aob-p8-f3C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWM-yV-8g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="584"/>
+            <point key="canvasLocation" x="2801.5384615384614" y="583.64928909952607"/>
         </scene>
         <!--商品加工注文-->
         <scene sceneID="7ZI-lp-gdf">
@@ -209,9 +293,6 @@
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                     <state key="normal" title="注文" backgroundImage="san"/>
-                                                                    <connections>
-                                                                        <action selector="orderItem:" destination="sdk-AD-Uji" eventType="touchUpInside" id="Wmc-TB-erO"/>
-                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemGray4Color"/>

@@ -33,8 +33,5 @@ class ItemTableViewCell: UITableViewCell {
         fishname.text = name
         fishprice.text = price
     }
-    @IBAction func orderItem(_ sender: Any)
-    {
-        
-    }
 }
+
