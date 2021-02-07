@@ -8,6 +8,8 @@
 import UIKit
 
 class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -18,6 +20,8 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
             image: UIImage(named: "aji")!,
             name: items[indexPath.row],
             price: prices[indexPath.row])
+        cell.order.tag = indexPath.row
+        cell.order.addTarget(self, action: #selector(new_page_access(_:)), for: .touchUpInside)
         return cell
     }
     
@@ -33,6 +37,11 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.viewDidLoad()
        
     }
-   
+    @objc func new_page_access(_ sender: UIButton){
+        let id = sender.tag
+        let viewController = NewItemViewController.makeInstance(str: items[id])
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
 
 }
