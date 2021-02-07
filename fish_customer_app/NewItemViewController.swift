@@ -7,10 +7,11 @@
 
 import UIKit
 
-class NewItemViewController: UIViewController {
+class NewItemViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var lb: UILabel!
-    private var str: String!
+    @IBOutlet weak var item_number_field: UITextField!
+    private var str:String = ""
     
     static func makeInstance(str: String)-> NewItemViewController{
         let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)
@@ -24,9 +25,12 @@ class NewItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         lb.text = str
+        item_number_field.delegate = self
     
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
     
 }

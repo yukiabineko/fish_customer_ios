@@ -58,11 +58,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-fl-I5B">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRa-9n-9NQ">
                                         <rect key="frame" x="0.0" y="446" width="414" height="74.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注文数を入力ください。" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvx-fl-I5B">
+                                                <rect key="frame" x="5" y="15" width="404" height="47.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="dvx-fl-I5B" firstAttribute="leading" secondItem="qRa-9n-9NQ" secondAttribute="leading" constant="5" id="JT6-Jk-cSD"/>
+                                            <constraint firstItem="dvx-fl-I5B" firstAttribute="top" secondItem="qRa-9n-9NQ" secondAttribute="top" constant="15" id="ODl-nb-kbv"/>
+                                            <constraint firstAttribute="bottom" secondItem="dvx-fl-I5B" secondAttribute="bottom" constant="12" id="dey-d4-TFw"/>
+                                            <constraint firstAttribute="trailing" secondItem="dvx-fl-I5B" secondAttribute="trailing" constant="5" id="sTQ-LX-CHB"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加工法" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bp6-m4-Tji">
                                         <rect key="frame" x="0.0" y="520.5" width="414" height="74.5"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -109,6 +121,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="item_number_field" destination="dvx-fl-I5B" id="0Of-id-neR"/>
                         <outlet property="lb" destination="PQD-Vt-1iT" id="lh1-vm-XOX"/>
                     </connections>
                 </viewController>

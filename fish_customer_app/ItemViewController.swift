@@ -9,7 +9,13 @@ import UIKit
 
 class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
-    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
