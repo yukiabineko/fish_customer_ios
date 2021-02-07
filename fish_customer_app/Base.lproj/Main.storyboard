@@ -88,35 +88,32 @@
         <!--ログイン-->
         <scene sceneID="GLe-rI-qwS">
             <objects>
-                <viewController id="yes-wi-Izo" sceneMemberID="viewController">
+                <viewController id="yes-wi-Izo" customClass="LoginViewController" customModule="fish_customer_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n0J-0R-Oav">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-An-SZ2">
-                                <rect key="frame" x="0.0" y="88" width="390" height="1343"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="M2w-An-SZ2">
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTy-9f-3vn">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="70.333333333333329"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYP-Dp-6bh">
-                                        <rect key="frame" x="0.0" y="135" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="81.333333333333343" width="390" height="70.666666666666657"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="EpH-5z-xKs"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NqZ-i0-Us2">
-                                        <rect key="frame" x="0.0" y="270" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="163" width="390" height="70.333333333333314"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sample@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dg6-pS-q4O">
-                                                <rect key="frame" x="10" y="10" width="370" height="108"/>
+                                                <rect key="frame" x="10" y="10.000000000000004" width="370" height="50.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
@@ -130,17 +127,17 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trq-gq-3rc">
-                                        <rect key="frame" x="0.0" y="405" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="244.33333333333334" width="390" height="70.333333333333343"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI4-DH-LZG">
-                                        <rect key="frame" x="0.0" y="540" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="325.66666666666669" width="390" height="70.666666666666686"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytc-nR-MQQ">
-                                                <rect key="frame" x="10" y="10" width="370" height="108"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ytc-nR-MQQ">
+                                                <rect key="frame" x="10" y="9.9999999999999964" width="370" height="50.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -154,16 +151,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSa-4t-8HB">
-                                        <rect key="frame" x="0.0" y="675" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="407.33333333333331" width="390" height="70.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0M-On-dfZ">
-                                        <rect key="frame" x="0.0" y="810" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="488.66666666666657" width="390" height="70.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="ログイン"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6w-qn-pNo">
-                                        <rect key="frame" x="0.0" y="945" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="570" width="390" height="70.666666666666629"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="新規登録はこちら">
                                             <color key="titleColor" red="0.94625195510000004" green="1" blue="0.96175957879999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -173,11 +170,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xT-hZ-bQq">
-                                        <rect key="frame" x="0.0" y="1080" width="390" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-ax-ghK">
-                                        <rect key="frame" x="0.0" y="1215" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="651.66666666666663" width="390" height="70.333333333333371"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                     </view>
                                 </subviews>
@@ -193,12 +186,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ログイン" id="aob-p8-f3C"/>
+                    <connections>
+                        <outlet property="mail_field" destination="dg6-pS-q4O" id="fAZ-NK-C2T"/>
+                        <outlet property="pass_field" destination="ytc-nR-MQQ" id="bEl-eO-DCO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWM-yV-8g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2801.5384615384614" y="583.64928909952607"/>
         </scene>
-        <!--New Users View Controller-->
+        <!--会員登録-->
         <scene sceneID="zzE-py-IJz">
             <objects>
                 <viewController id="xVe-GZ-p4Q" customClass="NewUsersViewController" customModule="fish_customer_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -403,6 +400,13 @@
                             <constraint firstItem="Czc-SC-FZl" firstAttribute="top" secondItem="xbT-qS-gKd" secondAttribute="top" id="bCr-UV-5eE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="会員登録" id="7y4-g9-WlY"/>
+                    <connections>
+                        <outlet property="mail_field" destination="eUU-Jm-NQV" id="8BH-Ty-ZG2"/>
+                        <outlet property="name_field" destination="4Fh-d4-VMe" id="ZHJ-W9-0Bk"/>
+                        <outlet property="pass_conf_field" destination="WnB-Dz-J9D" id="WQI-uu-yxT"/>
+                        <outlet property="pass_field" destination="WnB-Dz-J9D" id="IlK-9L-K4Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsX-Xk-er7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -510,12 +514,14 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzF-kZ-xge">
                                                                     <rect key="frame" x="0.0" y="40" width="358" height="60"/>
-                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <color key="backgroundColor" systemColor="linkColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="eKV-uh-BmL"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                                                    <state key="normal" title="注文" backgroundImage="san"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="44"/>
+                                                                    <state key="normal" title="注文" backgroundImage="kago">
+                                                                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                                    </state>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -587,10 +593,13 @@
     </scenes>
     <resources>
         <image name="download" width="267" height="189"/>
-        <image name="san" width="275" height="183"/>
+        <image name="kago" width="780" height="640"/>
         <image name="smile_hand_shufu_4888" width="255" height="248"/>
         <image name="カートのアイコン素材" width="227" height="227"/>
         <image name="メモアイコン" width="227" height="227"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
