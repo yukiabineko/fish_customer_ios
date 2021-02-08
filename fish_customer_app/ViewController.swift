@@ -27,14 +27,17 @@ class ViewController: UIViewController{
         let request = URLRequest(url:  url)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
            print("データ")
-            let jsons = try! JSONDecoder().decode([Items].self, from: data!)
-            for i in 0...jsons.count-1{
-                item_data.append([
-                    "name":jsons[i].name,
-                    "price": jsons[i].price,
-                    "stock": jsons[i].stock
-                ])
+            if((data) != nil){
+                let jsons = try! JSONDecoder().decode([Items].self, from: data!)
+                for i in 0...jsons.count-1{
+                    item_data.append([
+                        "name":jsons[i].name,
+                        "price": jsons[i].price,
+                        "stock": jsons[i].stock
+                    ])
+                }
             }
+          
         })
         task.resume()
     

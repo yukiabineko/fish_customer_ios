@@ -29,13 +29,21 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var items: Array<String> = []
     var prices: Array<Int> = []
     var stock: Array<Int> = []
-    var imgUrl = "https://yukiabineko.sakura.ne.jp/react/%E3%81%95%E3%82%93%E3%81%BE.jpg"
+    var imgUrl = "https://yukiabineko.sakura.ne.jp/react/"
     
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (item_data.count == 0 ) {
+            item_table.isHidden = true
+            let lb = UILabel(frame: CGRect(x: self.view.frame.size
+                                            .width/3.5, y: self.view.frame.size.height/2, width: self.view.frame.size.width, height: 100))
+            lb.text = "データが表示できません"
+            self.view.addSubview(lb)
+        }
        
     }
    
@@ -47,9 +55,14 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let itemData = item_data[indexPath.row] as! [String:Any]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
+        let name = itemData["name"] as! String
+        /*日本語変換*/
+        let encodeUrlString: String = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        
         cell.setStatus(
-            image: UIImage(url: imgUrl),
-            name: itemData["name"] as! String,
+            image: UIImage(url: imgUrl + encodeUrlString + ".jpg"),
+            name: name,
             price: itemData["price"] as! Int
          )
         cell.order.tag = indexPath.row
