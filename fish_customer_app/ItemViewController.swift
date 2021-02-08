@@ -29,13 +29,20 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var items: Array<String> = []
     var prices: Array<Int> = []
     var stock: Array<Int> = []
-    var imgUrl = "https://yukiabineko.sakura.ne.jp/react/%E3%81%95%E3%82%93%E3%81%BE.jpg"
+    var imgUrl = "https://yukiabineko.sakura.ne.jp/react/"
+    private var cacheCellHeights: [IndexPath: CGFloat] = [:]
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (item_data.count == 0 ) {
+            item_table.isHidden = true
+            let lb = UILabel(frame: CGRect(x: self.view.frame.size
+                                            .width/3.5, y: self.view.frame.size.height/2, width: self.view.frame.size.width, height: 100))
+            lb.text = "データが表示できません"
+            self.view.addSubview(lb)
+        }
        
     }
    
@@ -47,8 +54,9 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let itemData = item_data[indexPath.row] as! [String:Any]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
+        
         cell.setStatus(
-            image: UIImage(url: imgUrl),
+            image: imgUrl + (itemData["path"] as! String) + ".jpg",
             name: itemData["name"] as! String,
             price: itemData["price"] as! Int
          )
@@ -56,9 +64,12 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.order.addTarget(self, action: #selector(new_page_access(_:)), for: .touchUpInside)
         return cell
     }
+    
+    
     @objc func new_page_access(_ sender: UIButton){
         let id = sender.tag
-        let viewController = NewItemViewController.makeInstance(str: items[id])
+        let itemData = item_data[id] as! [String:Any]
+        let viewController = NewItemViewController.makeInstance(str: itemData["name"] as! String)
         self.present(viewController, animated: true, completion: nil)
     }
     
