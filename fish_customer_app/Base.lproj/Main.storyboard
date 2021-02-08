@@ -567,6 +567,9 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="商品加工注文" id="0XK-GT-3ky"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="item_table" destination="ElO-Nb-CfY" id="yBg-8e-oxt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpp-Ls-55l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

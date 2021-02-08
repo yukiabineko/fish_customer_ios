@@ -28,10 +28,10 @@ class ItemTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setStatus(image: UIImage, name: String, price: String){
+    func setStatus(image: UIImage, name: String, price: Int){
         fishImage.image = image
         fishname.text = name
-        fishprice.text = price
+        fishprice.text = String(price)
     }
 }
 
