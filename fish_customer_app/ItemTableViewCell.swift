@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SDWebImage;
+
 
 class ItemTableViewCell: UITableViewCell {
 
@@ -28,8 +30,8 @@ class ItemTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setStatus(image: UIImage, name: String, price: Int){
-        fishImage.image = image
+    func setStatus(image: String, name: String, price: Int){
+        fishImage.sd_setImage(with: URL(string: image), completed: nil)
         fishname.text = name
         fishprice.text = String(price)
     }

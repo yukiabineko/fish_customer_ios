@@ -1,0 +1,6 @@
+framework module Pods_fish_customer_app_fish_customer_appUITests {
+  umbrella header "Pods-fish_customer_app-fish_customer_appUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
