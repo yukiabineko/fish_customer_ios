@@ -13,6 +13,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(item_data as Any)
         
         mail_field.delegate = self
         pass_field.delegate = self

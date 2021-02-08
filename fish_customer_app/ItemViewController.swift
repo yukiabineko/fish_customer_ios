@@ -7,37 +7,54 @@
 
 import UIKit
 
+/*画像URLから取得*/
+
+extension UIImage {
+    public convenience init(url: String) {
+        let url = URL(string: url)
+        do {
+            let data = try Data(contentsOf: url!)
+        self.init(data: data)!
+        return
+        } catch let err {
+        print("Error : \(err.localizedDescription)")
+        }
+        self.init()
+    }
+}
+
 class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
-    override var shouldAutorotate: Bool {
-        return false
-    }
+    @IBOutlet weak var item_table: UITableView!
+    var items: Array<String> = []
+    var prices: Array<Int> = []
+    var stock: Array<Int> = []
+    var imgUrl = "https://yukiabineko.sakura.ne.jp/react/%E3%81%95%E3%82%93%E3%81%BE.jpg"
+    
+    
+    
 
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
-        cell.setStatus(
-            image: UIImage(named: images[indexPath.row])!,
-            name: items[indexPath.row],
-            price: prices[indexPath.row])
-        cell.order.tag = indexPath.row
-        cell.order.addTarget(self, action: #selector(new_page_access(_:)), for: .touchUpInside)
-        return cell
-    }
-    
-    let items = ["あじ", "さんま", "さば"]
-    let prices = ["100", "99", "380"]
-    let images = ["aji","san", "saba"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        
+    }
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return item_data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let itemData = item_data[indexPath.row] as! [String:Any]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
+        cell.setStatus(
+            image: UIImage(url: imgUrl),
+            name: itemData["name"] as! String,
+            price: itemData["price"] as! Int
+         )
+        cell.order.tag = indexPath.row
+        cell.order.addTarget(self, action: #selector(new_page_access(_:)), for: .touchUpInside)
+        return cell
     }
     @objc func new_page_access(_ sender: UIButton){
         let id = sender.tag
