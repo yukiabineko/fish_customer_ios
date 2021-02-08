@@ -30,10 +30,9 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var prices: Array<Int> = []
     var stock: Array<Int> = []
     var imgUrl = "https://yukiabineko.sakura.ne.jp/react/"
+    private var cacheCellHeights: [IndexPath: CGFloat] = [:]
     
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,23 +54,22 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let itemData = item_data[indexPath.row] as! [String:Any]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as! ItemTableViewCell
-        let name = itemData["name"] as! String
-        /*日本語変換*/
-        let encodeUrlString: String = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
         
         cell.setStatus(
-            image: UIImage(url: imgUrl + encodeUrlString + ".jpg"),
-            name: name,
+            image: imgUrl + (itemData["path"] as! String) + ".jpg",
+            name: itemData["name"] as! String,
             price: itemData["price"] as! Int
          )
         cell.order.tag = indexPath.row
         cell.order.addTarget(self, action: #selector(new_page_access(_:)), for: .touchUpInside)
         return cell
     }
+    
+    
     @objc func new_page_access(_ sender: UIButton){
         let id = sender.tag
-        let viewController = NewItemViewController.makeInstance(str: items[id])
+        let itemData = item_data[id] as! [String:Any]
+        let viewController = NewItemViewController.makeInstance(str: itemData["name"] as! String)
         self.present(viewController, animated: true, completion: nil)
     }
     
