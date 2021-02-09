@@ -81,6 +81,7 @@
                                     <color key="titleColor" red="1" green="0.6797631287" blue="0.12794543620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="session_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eX-cO-Cqt"/>
                                     <segue destination="yes-wi-Izo" kind="show" id="gh2-9t-LRB"/>
                                 </connections>
                             </button>
@@ -89,7 +90,7 @@
                     <connections>
                         <outlet property="alert_label" destination="cj2-dl-WkV" id="ida-DV-vib"/>
                         <outlet property="customer_button" destination="dYg-WD-HLQ" id="GlK-QT-ChF"/>
-                        <outlet property="login_tag" destination="Dhh-qA-uPq" id="RH5-M7-PSR"/>
+                        <outlet property="login_tag" destination="T95-Rf-6E8" id="CRx-tD-3UO"/>
                         <outlet property="order_button" destination="4LD-cQ-MAE" id="GpA-UR-cTs"/>
                     </connections>
                 </viewController>
