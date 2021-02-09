@@ -47,16 +47,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         else if(isValidEmail(mail_field.text!) == false && !(mail_field.text == "")){
             mail_validate.text = "正しい入力をお願いします"
             mail_validate.isHidden = false
+            pass_validate.isHidden = true
         }
-        else if(!(mail_field.text == "") && !(pass_field.text == "")){
+        else if(isValidEmail(mail_field.text!) == false && !(mail_field.text == "") && pass_field.text == "" ){
+            mail_validate.text = "正しい入力をお願いします"
+            mail_validate.isHidden = false
+            pass_validate.isHidden = false
+        }
+        else if(!(mail_field.text == "") && !(pass_field.text == "") && isValidEmail(mail_field.text!) == true ){
             mail_validate.isHidden = true
             mail_validate.text = "必須です"
             pass_validate.isHidden = true
             
-            
-            
-            
-            
+            let url = URL(string: "https://uematsu-backend.herokuapp.com/sessions")!
+            var request = URLRequest(url:  url)
+            request.httpMethod = "POST"
+            request.httpBody = ("email=" + mail_field.text! + "&password=" + pass_field.text!).data(using: .utf8)
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+               print("データ")
+                print(data as Any)
+                if((data) != nil){
+                    let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    user_data["name"] = jsons["name"] as AnyObject?
+                    user_data["email"] = jsons["email"] as AnyObject?
+                }
+                print(user_data)
+            })
+            task.resume()
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
