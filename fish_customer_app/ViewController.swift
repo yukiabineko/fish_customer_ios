@@ -8,9 +8,14 @@
 import UIKit
 
 var item_data:Array<Any> = []
+var user_data = Dictionary<String,AnyObject>()
 
 class ViewController: UIViewController{
     
+    @IBOutlet weak var alert_label: UILabel!
+    @IBOutlet weak var login_tag: UIBarButtonItem!
+    @IBOutlet weak var order_button: UIButton!
+    @IBOutlet weak var customer_button: UIButton!
     /*データモデル*/
     
     struct Items: Codable{
@@ -22,6 +27,10 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(user_data)
+        print("辞書")
+        
+        
         
         if(item_data.count == 0){
             let url = URL(string: "https://uematsu-backend.herokuapp.com/orders")!
@@ -43,11 +52,11 @@ class ViewController: UIViewController{
                         ])
                     }
                 }
-              
             })
             task.resume()
-        
         }
-      }
+    /* if(item_data.count == 0)文終了↑*/
+    }
+/********************viewDidload終了↑*******************************/
 }
 
