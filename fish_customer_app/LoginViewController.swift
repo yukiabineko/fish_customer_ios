@@ -64,14 +64,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             request.httpMethod = "POST"
             request.httpBody = ("email=" + mail_field.text! + "&password=" + pass_field.text!).data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-               print("データ")
-                print(data as Any)
+               
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
                     user_data["name"] = jsons["name"] as AnyObject?
                     user_data["email"] = jsons["email"] as AnyObject?
+                    DispatchQueue.main.sync {
+                      
+                        if(!(user_data["name"] == nil)){
+                            /*サーバー通信成功かつログイン成功*/
+                            let alert:UIAlertController = UIAlertController(title: "確認", message: "ログインしました。", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "閉じる", style: .default, handler: {(action: UIAlertAction!)-> Void in
+                                self.navigationController?.popViewController(animated: true)
+                            })
+                            alert.addAction(action)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        else{
+                            /*サーバー通信成功かつログイン失敗*/
+                            let alert:UIAlertController = UIAlertController(title: "確認", message: "認証失敗。", preferredStyle: .alert)
+                            let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                            alert.addAction(action)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        
+                        
+                    }
+                    
                 }
-                print(user_data)
             })
             task.resume()
         }
