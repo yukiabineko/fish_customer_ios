@@ -69,7 +69,11 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @objc func new_page_access(_ sender: UIButton){
         let id = sender.tag
         let itemData = item_data[id] as! [String:Any]
-        let viewController = NewItemViewController.makeInstance(str: itemData["name"] as! String)
+        let viewController = NewItemViewController.makeInstance(
+            name: itemData["name"] as! String,
+            price: itemData["price"] as! Int,
+            stock: itemData["stock"] as! Int
+        )
         self.present(viewController, animated: true, completion: nil)
     }
     
