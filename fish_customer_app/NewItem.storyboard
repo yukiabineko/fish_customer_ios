@@ -113,6 +113,9 @@
                                             <segment title="塩焼"/>
                                             <segment title="揚物"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="change_process:" destination="deJ-4m-e3s" eventType="valueChanged" id="ZYd-L4-8aF"/>
+                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-sj-EnA">
                                         <rect key="frame" x="0.0" y="655.5" width="414" height="65.5"/>
@@ -175,8 +178,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="control" destination="O3s-TD-rzF" id="efF-U0-xJe"/>
                         <outlet property="item_number_field" destination="dvx-fl-I5B" id="0Of-id-neR"/>
                         <outlet property="lb" destination="PQD-Vt-1iT" id="lh1-vm-XOX"/>
+                        <outlet property="price_lb" destination="ttv-41-Q63" id="nm4-gd-cC3"/>
                         <outlet property="send_button" destination="Oiy-AD-hKR" id="2J8-uZ-TvP"/>
                         <outlet property="stock" destination="xRo-Td-THv" id="AMG-DN-aDn"/>
                     </connections>
