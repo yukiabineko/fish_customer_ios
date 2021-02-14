@@ -67,9 +67,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                
                     user_data["id"] = jsons["id"] as AnyObject?
                     user_data["name"] = jsons["name"] as AnyObject?
                     user_data["email"] = jsons["email"] as AnyObject?
+                    user_data["orders"] = jsons["orders"] as AnyObject?
                     DispatchQueue.main.sync {
                       
                         if(!(user_data["name"] == nil)){
@@ -88,10 +90,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
                         }
-                        
-                        
                     }
-                    
+                    let mydata = MyData()
+                    let datas = mydata.todayOrders()
+                    print(datas.today)
+                    print("--------------")
+                    print(datas.tomorrow)
+                    /*print(((user_data["orders"] as! [Any])[0] as! [Any])[2])*/
                 }
             })
             task.resume()
