@@ -122,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="208" width="390" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="113" id="sqV-Nt-xaz" customClass="OrderTableViewCell" customModule="fish_customer_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" rowHeight="113" id="sqV-Nt-xaz" customClass="OrderTableViewCell" customModule="fish_customer_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="390" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sqV-Nt-xaz" id="jXu-U8-YVW">
@@ -136,25 +136,37 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="390" height="56.666666666666664"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品名:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQW-ZL-GhV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="97.666666666666671" height="56.666666666666664"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="65" height="56.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqP-zC-6Xf">
-                                                                    <rect key="frame" x="97.666666666666686" y="0.0" width="97.333333333333314" height="56.666666666666664"/>
+                                                                    <rect key="frame" x="65" y="0.0" width="65" height="56.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="価格:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aop-4T-UoO">
-                                                                    <rect key="frame" x="195" y="0.0" width="97.666666666666686" height="56.666666666666664"/>
+                                                                    <rect key="frame" x="130" y="0.0" width="65" height="56.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3d-YA-mLj">
-                                                                    <rect key="frame" x="292.66666666666669" y="0.0" width="97.333333333333314" height="56.666666666666664"/>
+                                                                    <rect key="frame" x="195" y="0.0" width="65" height="56.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注文数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyg-5a-0NN">
+                                                                    <rect key="frame" x="260" y="0.0" width="65" height="56.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="０" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSk-HJ-uC6">
+                                                                    <rect key="frame" x="325" y="0.0" width="65" height="56.666666666666664"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -204,6 +216,7 @@
                                         <connections>
                                             <outlet property="mainview" destination="jXu-U8-YVW" id="QLt-Kf-Caj"/>
                                             <outlet property="nameLabel" destination="CqP-zC-6Xf" id="PBT-YA-CvB"/>
+                                            <outlet property="numberLabel" destination="XSk-HJ-uC6" id="qPh-2h-plD"/>
                                             <outlet property="priceLabel" destination="G3d-YA-mLj" id="Z1j-2Y-NGo"/>
                                             <outlet property="processLabel" destination="GrA-hA-v5Q" id="Knv-hN-oOA"/>
                                             <outlet property="statusLabel" destination="SYZ-YN-z3g" id="QcA-Bo-Q1o"/>

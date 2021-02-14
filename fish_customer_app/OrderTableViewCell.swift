@@ -12,6 +12,7 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var mainview: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var processLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
@@ -25,6 +26,13 @@ class OrderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    func setOrderItem(name: String, price: String, num: String, process: String, status: String){
+        
+        nameLabel.text = name
+        priceLabel.text = price
+        numberLabel.text = num
+        processLabel.text = process
     }
 
 }
