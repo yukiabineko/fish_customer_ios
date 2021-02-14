@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		001ECEB925D02C9C0089BC25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001ECEB825D02C9C0089BC25 /* LoginViewController.swift */; };
+		0022B62D25D7EEF800F9C5F1 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */; };
 		003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003733ED25CEDC8300858951 /* ItemViewController.swift */; };
 		003733F625CEDDA500858951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003733F525CEDDA500858951 /* Assets.xcassets */; };
 		003EEE4A25D0A01700201C23 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003EEE4925D0A01700201C23 /* Data.swift */; };
@@ -21,6 +22,7 @@
 		007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */; };
 		00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */; };
 		00A36CFF25CF87F600F3B5E4 /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */; };
+		00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */; };
 		203CDE621472C66F7EA0476E /* Pods_fish_customer_app_fish_customer_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2533C012DB3A030310F559 /* Pods_fish_customer_app_fish_customer_appUITests.framework */; };
 		84253F20F7ACD49825297BE8 /* Pods_fish_customer_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90ED3884FF8C5FBF831AB61 /* Pods_fish_customer_appTests.framework */; };
 		CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */; };
@@ -46,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		001ECEB825D02C9C0089BC25 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		003733ED25CEDC8300858951 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		003733F525CEDDA500858951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003EEE4925D0A01700201C23 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
 		00BC676025D1614B00758DE6 /* fish_customer_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fish_customer_app-Bridging-Header.h"; sourceTree = "<group>"; };
+		00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		00D7DE79FD6C9FC3D3464011 /* Pods-fish_customer_app-fish_customer_appUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_app-fish_customer_appUITests.release.xcconfig"; path = "Target Support Files/Pods-fish_customer_app-fish_customer_appUITests/Pods-fish_customer_app-fish_customer_appUITests.release.xcconfig"; sourceTree = "<group>"; };
 		235F30A60B123F00AC6E3AAF /* Pods-fish_customer_app-fish_customer_appUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_app-fish_customer_appUITests.debug.xcconfig"; path = "Target Support Files/Pods-fish_customer_app-fish_customer_appUITests/Pods-fish_customer_app-fish_customer_appUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C2533C012DB3A030310F559 /* Pods_fish_customer_app_fish_customer_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fish_customer_app_fish_customer_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +146,8 @@
 				007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */,
 				00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */,
 				0051771725CE729C00902225 /* Main.storyboard */,
+				00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */,
+				0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */,
 				0051771C25CE729D00902225 /* LaunchScreen.storyboard */,
 				0051771F25CE729D00902225 /* Info.plist */,
 				003EEE4925D0A01700201C23 /* Data.swift */,
@@ -436,6 +442,8 @@
 				00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */,
 				007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */,
 				001ECEB925D02C9C0089BC25 /* LoginViewController.swift in Sources */,
+				00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */,
+				0022B62D25D7EEF800F9C5F1 /* OrdersViewController.swift in Sources */,
 				CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */,
 				0051771225CE729C00902225 /* AppDelegate.swift in Sources */,
 				003EEE4A25D0A01700201C23 /* Data.swift in Sources */,
