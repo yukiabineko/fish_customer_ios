@@ -20,6 +20,8 @@
 		0051772925CE729D00902225 /* fish_customer_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051772825CE729D00902225 /* fish_customer_appTests.swift */; };
 		0051773425CE729D00902225 /* fish_customer_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051773325CE729D00902225 /* fish_customer_appUITests.swift */; };
 		007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */; };
+		00941B0025DA084D00C441FD /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00941AFF25DA084D00C441FD /* UserViewController.swift */; };
+		00941B3425DA2C2E00C441FD /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */; };
 		00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */; };
 		00A36CFF25CF87F600F3B5E4 /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */; };
 		00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */; };
@@ -66,6 +68,8 @@
 		0051773325CE729D00902225 /* fish_customer_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fish_customer_appUITests.swift; sourceTree = "<group>"; };
 		0051773525CE729D00902225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		00941AFF25DA084D00C441FD /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = /Users/abi/Desktop/fish_customer_ios/fish_customer_app/UserTableViewCell.swift; sourceTree = "<absolute>"; };
 		00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
 		00BC676025D1614B00758DE6 /* fish_customer_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fish_customer_app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -144,8 +148,10 @@
 				CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */,
 				001ECEB825D02C9C0089BC25 /* LoginViewController.swift */,
 				007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */,
+				00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */,
 				00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */,
 				0051771725CE729C00902225 /* Main.storyboard */,
+				00941AFF25DA084D00C441FD /* UserViewController.swift */,
 				00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */,
 				0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */,
 				0051771C25CE729D00902225 /* LaunchScreen.storyboard */,
@@ -438,8 +444,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0051771625CE729C00902225 /* ViewController.swift in Sources */,
+				00941B0025DA084D00C441FD /* UserViewController.swift in Sources */,
 				003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */,
 				00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */,
+				00941B3425DA2C2E00C441FD /* UserTableViewCell.swift in Sources */,
 				007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */,
 				001ECEB925D02C9C0089BC25 /* LoginViewController.swift in Sources */,
 				00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */,
