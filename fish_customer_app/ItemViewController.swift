@@ -45,6 +45,46 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }
        
     }
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        /*データモデル*/
+        
+        struct Items: Codable{
+            let name:String
+            let price:Int
+            let stock:Int
+        }
+        let url = URL(string: "https://uematsu-backend.herokuapp.com/orders")!
+        let request = URLRequest(url:  url)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+          
+            if((data) != nil){
+                if(!(item_data.count == 0)){
+                    item_data.removeAll()
+                }
+                let jsons = try! JSONDecoder().decode([Items].self, from: data!)
+                for i in 0...jsons.count-1{
+                    let name = jsons[i].name
+                    /*日本語変換*/
+                    let encodeUrlString: String = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                    
+                    item_data.append([
+                        "name": name,
+                        "price": jsons[i].price,
+                        "stock": jsons[i].stock,
+                        "path": encodeUrlString
+                    ])
+                }
+                
+            }
+            DispatchQueue.main.async {
+                self.item_table.reloadData()
+            }
+        })
+        task.resume()
+    
+    }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return item_data.count
@@ -69,12 +109,16 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @objc func new_page_access(_ sender: UIButton){
         let id = sender.tag
         let itemData = item_data[id] as! [String:Any]
-        let viewController = NewItemViewController.makeInstance(
-            name: itemData["name"] as! String,
-            price: itemData["price"] as! Int,
-            stock: itemData["stock"] as! Int
+        let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)
+        let viewController:NewItemViewController = storyboard.instantiateViewController(withIdentifier: "NewItem") as! NewItemViewController
+        
+        viewController.makeInstance(
+        name: itemData["name"] as! String,
+        price: itemData["price"] as! Int,
+        stock: itemData["stock"] as! Int
         )
-        self.present(viewController, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
 
