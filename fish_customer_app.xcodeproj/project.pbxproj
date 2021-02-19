@@ -21,13 +21,13 @@
 		0051773425CE729D00902225 /* fish_customer_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051773325CE729D00902225 /* fish_customer_appUITests.swift */; };
 		007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */; };
 		00941B0025DA084D00C441FD /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00941AFF25DA084D00C441FD /* UserViewController.swift */; };
-		00941B3425DA2C2E00C441FD /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */; };
 		00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */; };
 		00A36CFF25CF87F600F3B5E4 /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */; };
 		00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C01FBB25D8B44200E5DAFC /* OrderTableViewCell.swift */; };
 		203CDE621472C66F7EA0476E /* Pods_fish_customer_app_fish_customer_appUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2533C012DB3A030310F559 /* Pods_fish_customer_app_fish_customer_appUITests.framework */; };
 		84253F20F7ACD49825297BE8 /* Pods_fish_customer_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90ED3884FF8C5FBF831AB61 /* Pods_fish_customer_appTests.framework */; };
 		CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */; };
+		CE6CCBDF25E003F3001ED229 /* userTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6CCBDE25E003F3001ED229 /* userTableViewCell.swift */; };
 		D349324CDEE4B3B0B077B49A /* Pods_fish_customer_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F1EA162AC8B0F109410020D /* Pods_fish_customer_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +69,6 @@
 		0051773525CE729D00902225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		00941AFF25DA084D00C441FD /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserTableViewCell.swift; path = /Users/abi/Desktop/fish_customer_ios/fish_customer_app/UserTableViewCell.swift; sourceTree = "<absolute>"; };
 		00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
 		00BC676025D1614B00758DE6 /* fish_customer_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fish_customer_app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		B513CC8997A17441860478B5 /* Pods-fish_customer_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_appTests.debug.xcconfig"; path = "Target Support Files/Pods-fish_customer_appTests/Pods-fish_customer_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B7C7FDB53CC62B61F5D91E68 /* Pods-fish_customer_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_appTests.release.xcconfig"; path = "Target Support Files/Pods-fish_customer_appTests/Pods-fish_customer_appTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUsersViewController.swift; sourceTree = "<group>"; };
+		CE6CCBDE25E003F3001ED229 /* userTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userTableViewCell.swift; sourceTree = "<group>"; };
 		D7F84D80965F6DD3D5C0B821 /* Pods-fish_customer_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_app.release.xcconfig"; path = "Target Support Files/Pods-fish_customer_app/Pods-fish_customer_app.release.xcconfig"; sourceTree = "<group>"; };
 		E90ED3884FF8C5FBF831AB61 /* Pods_fish_customer_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fish_customer_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F605CE699C98A6CE492C2722 /* Pods-fish_customer_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fish_customer_app.debug.xcconfig"; path = "Target Support Files/Pods-fish_customer_app/Pods-fish_customer_app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,13 +142,13 @@
 				0051771325CE729C00902225 /* SceneDelegate.swift */,
 				0051771125CE729C00902225 /* AppDelegate.swift */,
 				003733F525CEDDA500858951 /* Assets.xcassets */,
+				CE6CCBDE25E003F3001ED229 /* userTableViewCell.swift */,
 				0051771525CE729C00902225 /* ViewController.swift */,
 				00A36CF125CF857B00F3B5E4 /* NewItemViewController.swift */,
 				003733ED25CEDC8300858951 /* ItemViewController.swift */,
 				CE3CCA5425CFFD1F00B7BC53 /* NewUsersViewController.swift */,
 				001ECEB825D02C9C0089BC25 /* LoginViewController.swift */,
 				007851DF25CF024C00B0E29B /* ItemTableViewCell.swift */,
-				00941B3325DA2C2E00C441FD /* UserTableViewCell.swift */,
 				00A36CFE25CF87F600F3B5E4 /* NewItem.storyboard */,
 				0051771725CE729C00902225 /* Main.storyboard */,
 				00941AFF25DA084D00C441FD /* UserViewController.swift */,
@@ -447,7 +447,6 @@
 				00941B0025DA084D00C441FD /* UserViewController.swift in Sources */,
 				003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */,
 				00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */,
-				00941B3425DA2C2E00C441FD /* UserTableViewCell.swift in Sources */,
 				007851E025CF024C00B0E29B /* ItemTableViewCell.swift in Sources */,
 				001ECEB925D02C9C0089BC25 /* LoginViewController.swift in Sources */,
 				00C01FBC25D8B44200E5DAFC /* OrderTableViewCell.swift in Sources */,
@@ -455,6 +454,7 @@
 				CE3CCA5525CFFD1F00B7BC53 /* NewUsersViewController.swift in Sources */,
 				0051771225CE729C00902225 /* AppDelegate.swift in Sources */,
 				003EEE4A25D0A01700201C23 /* Data.swift in Sources */,
+				CE6CCBDF25E003F3001ED229 /* userTableViewCell.swift in Sources */,
 				0051771425CE729C00902225 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
