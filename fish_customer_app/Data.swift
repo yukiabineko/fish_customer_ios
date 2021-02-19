@@ -24,6 +24,17 @@ class MyData{
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
+    /*ユーザーのオーダー一覧*/
+    func orderUser() -> Array<Any>{
+        var userOrder: Array<Any> = []
+        let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
+        for i in 0 ... objects.count-1{
+            let dictionary = objects[i] as! Dictionary<String, Any>                      /*辞書型変換*/
+            userOrder.append(dictionary)
+        
+        }/*for文*/
+        return userOrder
+    }
     /*本日、明日の注文確保*/
     func todayOrders()-> (today: Array<Any>, tomorrow: Array<Any>){
         var todayArray:Array<Any> = []                                                       /*今日のデータ*/
@@ -51,5 +62,14 @@ class MyData{
         }/*=>if文*/
         return (todayArray, tomorrowArray)
     }
-/****************************************************************************************************************************/
+/********************************オーダー数********************************************************************************************/
+    func orderCount() -> Int{
+        if(!(user_data["orders"] == nil)){
+            let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
+            return objects.count
+        }
+        else{
+            return 0
+        }
+    }
 }

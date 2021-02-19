@@ -20,20 +20,18 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     private var stock_num:Int!
     private var process: String = ""
     
-    static func makeInstance(name: String, price: Int, stock: Int)-> NewItemViewController{
-        let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "NewItemViewController") as! NewItemViewController
-        viewController.name = name
-        viewController.price = String(price)
-        viewController.stock_num = stock
-        return viewController
+     func makeInstance(name: String, price: Int, stock: Int){
+       /*let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)*/
+        /*let viewController = storyboard.instantiateViewController(withIdentifier: "NewItem") as! NewItemViewController*/
+        self.name = name
+        self.price = String(price)
+        self.stock_num = stock
     }
-    @IBAction func back_menu(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         lb.text = name
         price_lb.text = price
         stock.text = String(stock_num)
@@ -43,7 +41,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
             send_button.isEnabled = false
             send_button.alpha = 0.5
         }
-        process = control.titleForSegment(at: 0)!
+        process = control.titleForSegment(at: 0)! 
     
     }
     /*キーボード関連*/
@@ -91,10 +89,17 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                         if(!(jsons["message"] as! String == "登録しました")){
                             /*サーバー通信成功成功*/
                             let alert:UIAlertController = UIAlertController(title: "確認", message: (jsons["message"] as! String), preferredStyle: .alert)
-                            let action = UIAlertAction(title: "閉じる", style: .default, handler: {(action: UIAlertAction!)-> Void in
+                            let action = UIAlertAction(title: "閉じる", style: .default, handler: { [self](action: UIAlertAction!)-> Void in
+                                
+                                DispatchQueue.main.async {
+                                    self.navigationController?.popViewController(animated: true)
+                                    self.send_button.isEnabled = false
+                                }
+                               
                             })
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
+                            
                             
                             
                         }
@@ -106,6 +111,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                             self.present(alert, animated: true, completion: nil)
                         }
                     }
+                
             })
             task.resume()
         }
@@ -118,10 +124,16 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         
         
     }
-/*加工法変更*/
+    @IBAction func back_menu(_ sender: Any)
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    /*加工法変更*/
     @IBAction func change_process(_ sender: Any) {
         let index = control.selectedSegmentIndex
         let str:String = control.titleForSegment(at: index)!
         process = str
     }
+    
+    
 }

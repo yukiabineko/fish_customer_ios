@@ -11,7 +11,7 @@
         <!--New Item View Controller-->
         <scene sceneID="yGI-Ww-8bS">
             <objects>
-                <viewController storyboardIdentifier="NewItemViewController" id="deJ-4m-e3s" customClass="NewItemViewController" customModule="fish_customer_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewItem" useStoryboardIdentifierAsRestorationIdentifier="YES" id="deJ-4m-e3s" customClass="NewItemViewController" customModule="fish_customer_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XwI-1e-LyN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="back_menu:" destination="deJ-4m-e3s" eventType="touchUpInside" id="9TZ-Gb-CkX"/>
+                                                    <action selector="back_menu:" destination="deJ-4m-e3s" eventType="touchUpInside" id="RQO-Ds-yZn"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -178,17 +178,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="control" destination="O3s-TD-rzF" id="efF-U0-xJe"/>
-                        <outlet property="item_number_field" destination="dvx-fl-I5B" id="0Of-id-neR"/>
-                        <outlet property="lb" destination="PQD-Vt-1iT" id="lh1-vm-XOX"/>
-                        <outlet property="price_lb" destination="ttv-41-Q63" id="nm4-gd-cC3"/>
-                        <outlet property="send_button" destination="Oiy-AD-hKR" id="2J8-uZ-TvP"/>
-                        <outlet property="stock" destination="xRo-Td-THv" id="AMG-DN-aDn"/>
+                        <outlet property="control" destination="O3s-TD-rzF" id="c5i-u3-eur"/>
+                        <outlet property="item_number_field" destination="dvx-fl-I5B" id="jbh-As-KpD"/>
+                        <outlet property="lb" destination="PQD-Vt-1iT" id="ipi-Gh-fUR"/>
+                        <outlet property="price_lb" destination="ttv-41-Q63" id="bEu-vK-dKY"/>
+                        <outlet property="send_button" destination="Oiy-AD-hKR" id="Xl2-nE-bm5"/>
+                        <outlet property="stock" destination="xRo-Td-THv" id="16B-BD-Pb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkW-mf-Y8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279.71014492753625" y="51.5625"/>
+            <point key="canvasLocation" x="10283" y="-2650"/>
         </scene>
     </scenes>
     <resources>
