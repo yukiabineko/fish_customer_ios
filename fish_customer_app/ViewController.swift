@@ -29,20 +29,24 @@ class ViewController: UIViewController{
         let stock:Int
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         progressArea = UIView.init(frame: CGRect(x: 0, y: self.view.bounds.size.height/3, width: self.view.bounds.size.width, height: self.view.bounds.size.height/10 ))
         progressArea.backgroundColor = UIColor.white
+        progressArea.layer.cornerRadius = 4
+        progressArea.layer.shadowOpacity = 0.9
+        progressArea.layer.shadowRadius = 2
         
-        progressLabel = UILabel(frame: CGRect(x: 0, y: progressArea.frame.size.height/2.5, width: progressArea.frame.size.width, height: progressArea.frame.size.height/15))
+        
+        progressLabel = UILabel(frame: CGRect(x: 0, y: progressArea.frame.size.height/5, width: progressArea.frame.size.width, height: progressArea.frame.size.height/3))
         progressLabel.text = "しばらくお待ちください。"
         
-        progressBar = UIProgressView(frame: CGRect(x: 10, y: progressArea.frame.size.height/2, width: progressArea.frame.size.width-20, height: progressArea.frame.size.height/20))
+        progressBar = UIProgressView(frame: CGRect(x: 10, y: progressArea.frame.size.height/1.5, width: progressArea.frame.size.width-20, height: progressArea.frame.size.height/20))
         progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
         progressBar.progressTintColor = .blue
-        progressBar.progress = 1
+        progressBar.setProgress(1.0, animated: true)
+        progressBar.progress = 1.0
 
         
         progressArea.addSubview(progressLabel)
@@ -73,6 +77,16 @@ class ViewController: UIViewController{
                             "path": encodeUrlString
                         ])
                     }
+                }
+                else{
+                    let alert = UIAlertController(title: "ご案内", message: "情報取得失敗しました。", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.progressBar.progress = 1.0
+                    self.progressArea.isHidden = true
                 }
                 
             })
@@ -114,6 +128,7 @@ class ViewController: UIViewController{
                 self.loadView()
                 self.viewDidLoad()
                 self.login_tag.setTitle("ログイン", for: .normal)
+                self.progressArea.isHidden = true
                 let checkAlert = UIAlertController(title: "確認", message: "ログアウトしました。", preferredStyle: .alert)
                 let closeAction = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
                 checkAlert.addAction(closeAction)

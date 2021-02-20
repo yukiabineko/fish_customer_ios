@@ -12,12 +12,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pass_field: UITextField!
     @IBOutlet weak var mail_validate: UILabel!
     @IBOutlet weak var pass_validate: UILabel!
+    var progressArea:UIView!
+    var progressLabel:UILabel!
+    var progressBar:UIProgressView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        progressArea = UIView.init(frame: CGRect(x: 0, y: self.view.bounds.size.height/3, width: self.view.bounds.size.width, height: self.view.bounds.size.height/10 ))
+        progressArea.backgroundColor = UIColor.white
+        progressArea.layer.cornerRadius = 6
+        progressArea.layer.shadowOpacity = 0.7
+        progressArea.layer.shadowRadius = 4
+        
+        
+        progressLabel = UILabel(frame: CGRect(x: 0, y: progressArea.frame.size.height/5, width: progressArea.frame.size.width, height: progressArea.frame.size.height/3))
+        progressLabel.text = "ただいまアクセスしてます。"
+        
+        progressBar = UIProgressView(frame: CGRect(x: 10, y: progressArea.frame.size.height/1.5, width: progressArea.frame.size.width-50, height: progressArea.frame.size.height/20))
+        progressBar.transform = CGAffineTransform(scaleX: 1.0, y: 6.0)
+        progressBar.progressTintColor = .green
+        progressBar.setProgress(1.0, animated: true)
+        progressBar.progress = 0.8
+
+        
+        progressArea.addSubview(progressLabel)
+        progressArea.addSubview(progressBar)
+        self.view.addSubview(progressArea)
+        
+        progressArea.isHidden = true
+        
         mail_field.delegate = self
+        mail_field.keyboardType = .emailAddress
         pass_field.delegate = self
         
     }
@@ -55,6 +83,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             pass_validate.isHidden = false
         }
         else if(!(mail_field.text == "") && !(pass_field.text == "") && isValidEmail(mail_field.text!) == true ){
+            progressArea.isHidden = false
+            progressBar.setProgress(1.0, animated: true)
+            
             mail_validate.isHidden = true
             mail_validate.text = "必須です"
             pass_validate.isHidden = true
@@ -98,6 +129,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print(datas.tomorrow)
                     /*print(((user_data["orders"] as! [Any])[0] as! [Any])[2])*/
                 }
+                DispatchQueue.main.async{
+                    self.progressBar.progress = 1.0
+                    self.progressArea.isHidden = true
+                }
+                
             })
             task.resume()
         }
