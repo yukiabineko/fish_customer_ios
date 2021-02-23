@@ -15,12 +15,18 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var item_number_field: UITextField!
     @IBOutlet weak var send_button: UIButton!
     @IBOutlet weak var control: UISegmentedControl!
+    @IBOutlet weak var time_field: UITextField!
     private var name:String = ""
     private var price: String = ""
     private var stock_num:Int!
     private var process: String = ""
+    private var order_time: String = ""
     
-     func makeInstance(name: String, price: Int, stock: Int){
+    //UIDatePickerを定義するための変数
+    var datePicker: UIDatePicker = UIDatePicker()
+    
+    
+    func makeInstance(name: String, price: Int, stock: Int){
        /*let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)*/
         /*let viewController = storyboard.instantiateViewController(withIdentifier: "NewItem") as! NewItemViewController*/
         self.name = name
@@ -28,9 +34,31 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         self.stock_num = stock
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ピッカー設定
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+        time_field.inputView = datePicker
+        
+        
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 80))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        
+        
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        time_field.inputView = datePicker
+        time_field.inputAccessoryView = toolbar
+
+        
+        
     
         lb.text = name
         price_lb.text = price
@@ -43,6 +71,21 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         }
         process = control.titleForSegment(at: 0)! 
     
+    }
+    // UIDatePickerのDoneを押したら発火
+    @objc func done() {
+        time_field.endEditing(true)
+
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+        formatter.dateFormat = "HH:mm"
+
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        time_field.text = "\(formatter.string(from: datePicker.date))"
+
     }
     /*キーボード関連*/
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -70,6 +113,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         if(!(item_number_field.text!.isEmpty)){
             let id  = String(describing: user_data["id"]!)
             let num = String(item_number_field.text!)
+            let time = String(time_field.text!)
             let url = URL(string: "https://uematsu-backend.herokuapp.com/shopping_phone")!
             var request = URLRequest(url:  url)
             request.httpMethod = "POST"
@@ -78,12 +122,12 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                     "&name=" + name +
                     "&price=" + price +
                     "&num=" + num +
-                    "&process=" + process
+                    "&process=" + process +
+                    "&time =" + time
             ).data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-               
+                if(!(data == nil)){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
-                
                     DispatchQueue.main.sync {
                       
                         if(!(jsons["message"] as! String == "登録しました")){
@@ -100,8 +144,6 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
                             
-                            
-                            
                         }
                         else{
                             /*サーバー通信失敗*/
@@ -111,8 +153,8 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                             self.present(alert, animated: true, completion: nil)
                         }
                     }
-                
-            })
+                }/*dataあるか検証*/
+             })
             task.resume()
         }
         else{
@@ -133,6 +175,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         let index = control.selectedSegmentIndex
         let str:String = control.titleForSegment(at: index)!
         process = str
+    }
+    @IBAction func tilme_open(_ sender: Any) {
+        
     }
     
     

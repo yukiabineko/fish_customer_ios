@@ -38,7 +38,8 @@ class OrdersViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderTableViewCell
-       
+        print(todayOrder)
+        print(tomorrowOrder)
        
         switch indexPath.section {
         case 0:
@@ -49,7 +50,9 @@ class OrdersViewController: UIViewController,UITableViewDelegate,UITableViewData
                     price: String(describing: todayRow["price"]!),
                     num: String(describing: todayRow["num"]!),
                     process: todayRow["process"] as! String,
-                    status:String(describing: todayRow["status"]!)
+                    status:String(describing: todayRow["status"]!),
+                    time:String(describing: todayRow["receiving_time"]!)
+                    
                 )
             }
         case 1:
@@ -60,7 +63,8 @@ class OrdersViewController: UIViewController,UITableViewDelegate,UITableViewData
                     price: String(describing: tommorowRow["price"]!),
                     num: String(describing: tommorowRow["num"]!),
                     process: tommorowRow["process"] as! String,
-                    status:String(describing: tommorowRow["status"]!)
+                    status:String(describing: tommorowRow["status"]!),
+                    time:String(describing: tommorowRow["receiving_time"]!)
                 )
             }
         default:

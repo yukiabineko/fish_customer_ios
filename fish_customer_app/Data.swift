@@ -45,9 +45,11 @@ class MyData{
         let tomorrowDate = Calendar.current.date(byAdding: .day, value: 1, to: todayDate)
         let tomorrow = stringFromDate(date: tomorrowDate!, format: "yyyy/MM/dd")
         
-        if(!(user_data["orders"] == nil)){                                                   /*ログインされてデータあるとき*/
-            
+       
+        
+        if(!(user_data["orders"] == nil) && (user_data["orders"] as! [Any]).count > 0){                                                   /*ログインされてデータあるとき*/
             let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
+            
             for i in 0 ... objects.count-1{
                 let dictionary = objects[i] as! Dictionary<String, Any>                      /*辞書型変換*/
                 if(today == dictionary["shopping_date"] as! String){
