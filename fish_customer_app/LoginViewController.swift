@@ -98,11 +98,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
-                
+                    print(jsons)
                     user_data["id"] = jsons["id"] as AnyObject?
                     user_data["name"] = jsons["name"] as AnyObject?
                     user_data["email"] = jsons["email"] as AnyObject?
                     user_data["orders"] = jsons["orders"] as AnyObject?
+                    
                     DispatchQueue.main.sync {
                       
                         if(!(user_data["name"] == nil)){

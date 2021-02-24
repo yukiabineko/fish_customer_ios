@@ -34,7 +34,7 @@ class OrderTableViewCell: UITableViewCell {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
             dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            let date = dateFormatter.date(from: "2021-02-24T00:00:00.000+09:00")
+            let date = dateFormatter.date(from: time)
             
             dateFormatter.dateFormat = "MM/dd HH:mm"
             dateFormatter.timeZone = TimeZone(identifier:  "Asia/Tokyo")

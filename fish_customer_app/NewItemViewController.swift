@@ -123,7 +123,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                     "&price=" + price +
                     "&num=" + num +
                     "&process=" + process +
-                    "&time =" + time
+                    "&time=" + time
             ).data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if(!(data == nil)){
@@ -163,7 +163,6 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
-        
         
     }
     @IBAction func back_menu(_ sender: Any)

@@ -74,4 +74,26 @@ class MyData{
             return 0
         }
     }
+/********************************ユーザーごとのデータ取り出し(データの更新)********************************************************************************************/
+    func showUserData(id: Int){
+        if(!(user_data["name"] == nil)){
+           
+            user_data.removeAll()
+            let url = URL(string: "https://uematsu-backend.herokuapp.com/users/" + String(id))!
+            let request = URLRequest(url:  url)
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+               
+                if((data) != nil){
+                    let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    user_data["id"] = jsons["id"] as AnyObject?
+                    user_data["name"] = jsons["name"] as AnyObject?
+                    user_data["email"] = jsons["email"] as AnyObject?
+                    user_data["orders"] = jsons["orders"] as AnyObject?
+                    
+                }
+            })
+            task.resume()
+            
+        }
+    }
 }

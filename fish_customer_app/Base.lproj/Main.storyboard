@@ -808,6 +808,9 @@
                                         <state key="normal" title="登録">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="add_user:" destination="xVe-GZ-p4Q" eventType="touchDown" id="4ed-yj-atE"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqp-s2-2Qm">
                                         <rect key="frame" x="0.0" y="693" width="390" height="63"/>
@@ -830,7 +833,7 @@
                         <outlet property="mail_field" destination="eUU-Jm-NQV" id="8BH-Ty-ZG2"/>
                         <outlet property="name_field" destination="4Fh-d4-VMe" id="ZHJ-W9-0Bk"/>
                         <outlet property="pass_conf_field" destination="WnB-Dz-J9D" id="WQI-uu-yxT"/>
-                        <outlet property="pass_field" destination="WnB-Dz-J9D" id="IlK-9L-K4Q"/>
+                        <outlet property="pass_field" destination="xEC-bv-YaI" id="8as-4y-UYb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsX-Xk-er7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
