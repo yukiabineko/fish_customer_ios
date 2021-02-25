@@ -45,9 +45,11 @@ class MyData{
         let tomorrowDate = Calendar.current.date(byAdding: .day, value: 1, to: todayDate)
         let tomorrow = stringFromDate(date: tomorrowDate!, format: "yyyy/MM/dd")
         
-        if(!(user_data["orders"] == nil)){                                                   /*ログインされてデータあるとき*/
-            
+       
+        
+        if(!(user_data["orders"] == nil) && (user_data["orders"] as! [Any]).count > 0){                                                   /*ログインされてデータあるとき*/
             let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
+            
             for i in 0 ... objects.count-1{
                 let dictionary = objects[i] as! Dictionary<String, Any>                      /*辞書型変換*/
                 if(today == dictionary["shopping_date"] as! String){
@@ -70,6 +72,28 @@ class MyData{
         }
         else{
             return 0
+        }
+    }
+/********************************ユーザーごとのデータ取り出し(データの更新)********************************************************************************************/
+    func showUserData(id: Int){
+        if(!(user_data["name"] == nil)){
+           
+            user_data.removeAll()
+            let url = URL(string: "https://uematsu-backend.herokuapp.com/users/" + String(id))!
+            let request = URLRequest(url:  url)
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+               
+                if((data) != nil){
+                    let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    user_data["id"] = jsons["id"] as AnyObject?
+                    user_data["name"] = jsons["name"] as AnyObject?
+                    user_data["email"] = jsons["email"] as AnyObject?
+                    user_data["orders"] = jsons["orders"] as AnyObject?
+                    
+                }
+            })
+            task.resume()
+            
         }
     }
 }
