@@ -41,8 +41,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
-        datePicker.datePickerMode = .dateAndTime
+        datePicker.datePickerMode = .time
         datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(self.changeTime(_:)), for: .valueChanged)
         time_field.inputView = datePicker
         
         
@@ -177,6 +178,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func tilme_open(_ sender: Any) {
         
+    }
+    @objc func changeTime(_ sender: UIDatePicker){
+        print("sample")
     }
     
     
