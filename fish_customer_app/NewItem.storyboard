@@ -107,7 +107,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOI-CQ-9Mh">
                                         <rect key="frame" x="0.0" y="511" width="414" height="57"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注文数を入力ください。" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-YS-doH">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="受け取り時間入力ください" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-YS-doH">
                                                 <rect key="frame" x="5" y="5" width="404" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -134,11 +134,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-TD-rzF">
                                         <rect key="frame" x="0.0" y="625" width="414" height="57.5"/>
                                         <segments>
-                                            <segment title="刺身"/>
+                                            <segment title="その他"/>
                                             <segment title="切身"/>
-                                            <segment title="煮物"/>
-                                            <segment title="塩焼"/>
-                                            <segment title="揚物"/>
                                         </segments>
                                         <connections>
                                             <action selector="change_process:" destination="deJ-4m-e3s" eventType="valueChanged" id="ZYd-L4-8aF"/>
