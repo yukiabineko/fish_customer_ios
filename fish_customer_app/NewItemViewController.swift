@@ -14,6 +14,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stock: UILabel!
     @IBOutlet weak var item_number_field: UITextField!
     @IBOutlet weak var send_button: UIButton!
+    @IBOutlet weak var back_button: UIButton!
     @IBOutlet weak var control: UISegmentedControl!
     @IBOutlet weak var time_field: UITextField!
     private var name:String = ""
@@ -37,6 +38,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        send_button.layer.cornerRadius = 5
+        back_button.layer.cornerRadius = 5
         
         /*segmentcontrol セット*/
         let segmentItems = self.process.split(separator: ",")
@@ -143,8 +147,14 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if(!(data == nil)){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    
+                    if(!(user_data["name"] == nil)){
+                        let id = user_data["id"] as! Int
+                        MyData().showUserData(id: id)  /*データの更新*/
+                        print("テストです")
+                    }
+                    
                     DispatchQueue.main.sync {
-                      
                         if(!(jsons["message"] as! String == "登録しました")){
                             /*サーバー通信成功成功*/
                             let alert:UIAlertController = UIAlertController(title: "確認", message: (jsons["message"] as! String), preferredStyle: .alert)
