@@ -107,7 +107,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOI-CQ-9Mh">
                                         <rect key="frame" x="0.0" y="511" width="414" height="57"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注文数を入力ください。" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-YS-doH">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="受け取り時間入力ください" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvD-YS-doH">
                                                 <rect key="frame" x="5" y="5" width="404" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -134,11 +134,8 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O3s-TD-rzF">
                                         <rect key="frame" x="0.0" y="625" width="414" height="57.5"/>
                                         <segments>
-                                            <segment title="刺身"/>
+                                            <segment title="その他"/>
                                             <segment title="切身"/>
-                                            <segment title="煮物"/>
-                                            <segment title="塩焼"/>
-                                            <segment title="揚物"/>
                                         </segments>
                                         <connections>
                                             <action selector="change_process:" destination="deJ-4m-e3s" eventType="valueChanged" id="ZYd-L4-8aF"/>
@@ -150,6 +147,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oiy-AD-hKR">
                                                 <rect key="frame" x="10" y="10" width="394" height="37"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <inset key="contentEdgeInsets" minX="7" minY="5" maxX="5" maxY="7"/>
+                                                <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="注文する">
                                                     <color key="titleColor" red="0.94625195510000004" green="1" blue="0.96175957879999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -205,6 +204,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="back_button" destination="vkC-kA-nxY" id="Tz8-YU-MhK"/>
                         <outlet property="control" destination="O3s-TD-rzF" id="c5i-u3-eur"/>
                         <outlet property="item_number_field" destination="dvx-fl-I5B" id="qq4-HO-dxN"/>
                         <outlet property="lb" destination="PQD-Vt-1iT" id="ipi-Gh-fUR"/>
@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkW-mf-Y8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10283" y="-2650"/>
+            <point key="canvasLocation" x="10282.608695652174" y="-2650.4464285714284"/>
         </scene>
     </scenes>
     <resources>

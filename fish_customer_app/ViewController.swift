@@ -9,6 +9,8 @@ import UIKit
 
 var item_data:Array<Any> = []
 var user_data = Dictionary<String,AnyObject>()
+var user_email: String = ""
+var user_password: String = ""
 
 class ViewController: UIViewController{
     
@@ -57,6 +59,7 @@ class ViewController: UIViewController{
             getOrder() /*オーダー取得*/
         }
        
+       
     }
 /********************viewDidload終了↑*******************************/
 /********************viewWillapper開始*******************************/
@@ -76,12 +79,12 @@ class ViewController: UIViewController{
                     login_tag.setTitle("ログアウト", for: .normal)
                    
         }
-        if(!(user_data["name"] == nil)){
+        /*if(!(user_data["name"] == nil)){
             let id = user_data["id"] as! Int
             MyData().showUserData(id: id)  /*データの更新*/
             print("テストです")
-            
         }
+        */
         
     }
 /********************viewWillapper終了*******************************/
@@ -138,18 +141,23 @@ class ViewController: UIViewController{
                             "path": encodeUrlString
                         ])
                     }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.progressBar.progress = 1.0
+                        self.progressArea.isHidden = true
+                    }
+                    
                 }
                 else{
-                    let alert = UIAlertController(title: "ご案内", message: "情報取得失敗しました。", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-                    alert.addAction(action)
-                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let alert = UIAlertController(title: "ご案内", message: "情報取得失敗しました。", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                        alert.addAction(action)
+                        self.present(alert, animated: true, completion: nil)
+                        self.progressBar.progress = 1.0
+                        self.progressArea.isHidden = true
+                    }
+                 
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.progressBar.progress = 1.0
-                    self.progressArea.isHidden = true
-                }
-                
             })
             task.resume()
         }

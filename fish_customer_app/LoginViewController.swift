@@ -90,11 +90,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             mail_validate.text = "必須です"
             pass_validate.isHidden = true
             
+            
+            user_email = mail_field.text!
+            user_password = pass_field.text!
             let url = URL(string: "https://uematsu-backend.herokuapp.com/sessions")!
             var request = URLRequest(url:  url)
             request.httpMethod = "POST"
             request.httpBody = ("email=" + mail_field.text! + "&password=" + pass_field.text!).data(using: .utf8)
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { [self] (data, response, error) in
                
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>

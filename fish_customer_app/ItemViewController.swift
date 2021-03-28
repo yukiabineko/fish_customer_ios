@@ -54,6 +54,7 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
             let name:String
             let price:Int
             let stock:Int
+            let process: String
         }
         let url = URL(string: "https://uematsu-backend.herokuapp.com/orders")!
         let request = URLRequest(url:  url)
@@ -73,7 +74,8 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
                         "name": name,
                         "price": jsons[i].price,
                         "stock": jsons[i].stock,
-                        "path": encodeUrlString
+                        "path": encodeUrlString,
+                        "process": jsons[i].process
                     ])
                 }
                 
@@ -83,8 +85,8 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
             }
         })
         task.resume()
-    
-    }
+        
+     }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return item_data.count
@@ -113,9 +115,10 @@ class ItemViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let viewController:NewItemViewController = storyboard.instantiateViewController(withIdentifier: "NewItem") as! NewItemViewController
         
         viewController.makeInstance(
-        name: itemData["name"] as! String,
-        price: itemData["price"] as! Int,
-        stock: itemData["stock"] as! Int
+            name: itemData["name"] as! String,
+            price: itemData["price"] as! Int,
+            stock: itemData["stock"] as! Int,
+            process:itemData["process"] as! String
         )
         
         self.navigationController?.pushViewController(viewController, animated: true)

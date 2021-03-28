@@ -27,12 +27,14 @@ class MyData{
     /*ユーザーのオーダー一覧*/
     func orderUser() -> Array<Any>{
         var userOrder: Array<Any> = []
-        let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
-        for i in 0 ... objects.count-1{
-            let dictionary = objects[i] as! Dictionary<String, Any>                      /*辞書型変換*/
-            userOrder.append(dictionary)
-        
-        }/*for文*/
+        if((user_data["orders"]?.count)! > 0){
+            let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
+            for i in 0 ... objects.count-1{
+                let dictionary = objects[i] as! Dictionary<String, Any>                      /*辞書型変換*/
+                userOrder.append(dictionary)
+            
+            }/*for文*/
+        }
         return userOrder
     }
     /*本日、明日の注文確保*/
@@ -66,7 +68,7 @@ class MyData{
     }
 /********************************オーダー数********************************************************************************************/
     func orderCount() -> Int{
-        if(!(user_data["orders"] == nil)){
+        if(!(user_data["orders"] == nil) && (user_data["orders"] as! [Any]).count > 0){
             let objects = ((user_data["orders"] as! [Any])[0] as! [Any])
             return objects.count
         }
@@ -74,13 +76,19 @@ class MyData{
             return 0
         }
     }
-/********************************ユーザーごとのデータ取り出し(データの更新)********************************************************************************************/
+/********************************ユーザーごとのデータ取り出し(ユーザーデータの更新)********************************************************************************************/
     func showUserData(id: Int){
         if(!(user_data["name"] == nil)){
            
             user_data.removeAll()
-            let url = URL(string: "https://uematsu-backend.herokuapp.com/users/" + String(id))!
-            let request = URLRequest(url:  url)
+            let url = URL(string: "https://uematsu-backend.herokuapp.com/users/show")
+            var request = URLRequest(url:  url!)
+            request.httpMethod = "POST"
+            request.httpBody = (
+                "id=" + id.description +
+                "&email=" + user_email +
+                "&password=" + user_password
+            ).data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                
                 if((data) != nil){

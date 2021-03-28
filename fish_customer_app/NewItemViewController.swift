@@ -14,6 +14,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stock: UILabel!
     @IBOutlet weak var item_number_field: UITextField!
     @IBOutlet weak var send_button: UIButton!
+    @IBOutlet weak var back_button: UIButton!
     @IBOutlet weak var control: UISegmentedControl!
     @IBOutlet weak var time_field: UITextField!
     private var name:String = ""
@@ -26,16 +27,33 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     var datePicker: UIDatePicker = UIDatePicker()
     
     
-    func makeInstance(name: String, price: Int, stock: Int){
+    func makeInstance(name: String, price: Int, stock: Int, process: String){
        /*let storyboard: UIStoryboard = UIStoryboard(name: "NewItem", bundle: nil)*/
         /*let viewController = storyboard.instantiateViewController(withIdentifier: "NewItem") as! NewItemViewController*/
         self.name = name
         self.price = String(price)
         self.stock_num = stock
+        self.process = process
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        send_button.layer.cornerRadius = 5
+        back_button.layer.cornerRadius = 5
+        
+        /*segmentcontrol セット*/
+        let segmentItems = self.process.split(separator: ",")
+        var array:[String] = []
+        if(segmentItems.count > 0){
+            for i in 0 ... segmentItems.count-1{
+                array.append(String(segmentItems[i]))
+            }
+            control.changeAllSegmentWithArray(arr: array)
+        }
+        else{
+            control.isHidden = true
+        }
         
         // ピッカー設定
         datePicker.datePickerMode = UIDatePicker.Mode.date
@@ -129,8 +147,14 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
                 if(!(data == nil)){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    
+                    if(!(user_data["name"] == nil)){
+                        let id = user_data["id"] as! Int
+                        MyData().showUserData(id: id)  /*データの更新*/
+                        print("テストです")
+                    }
+                    
                     DispatchQueue.main.sync {
-                      
                         if(!(jsons["message"] as! String == "登録しました")){
                             /*サーバー通信成功成功*/
                             let alert:UIAlertController = UIAlertController(title: "確認", message: (jsons["message"] as! String), preferredStyle: .alert)
@@ -179,9 +203,36 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     @IBAction func tilme_open(_ sender: Any) {
         
     }
+    
     @objc func changeTime(_ sender: UIDatePicker){
-        print("sample")
+        // 日付のフォーマット
+        let formatter = DateFormatter()
+        //"yyyy年MM月dd日"を"yyyy/MM/dd"したりして出力の仕方を好きに変更できるよ
+        formatter.dateFormat = "HH:mm"
+        let selectValue:Array = "\(formatter.string(from: datePicker.date))".split(separator: ":")
+        let selectHour:Int = Int(selectValue[0])!
+        let selectMin:Int = Int(selectValue[1])!
+        let selectMinTotal:Int = selectHour * 60  + selectMin
+        if(selectMinTotal < 540 || selectMinTotal > 1260){
+            let alert:UIAlertController = UIAlertController(title: "警告", message: "受け取り時刻は\n午前9:00から午後9:00までです。", preferredStyle: .alert)
+            let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            let date = formatter.date(from: "9:00")
+            datePicker.date = date!
+        }
     }
     
     
+}
+/* segmentcontrolカスタム　*/
+extension UISegmentedControl {
+    func changeAllSegmentWithArray(arr: [String]){
+        self.removeAllSegments()
+        for str in arr {
+            self.insertSegment(withTitle: str, at: self.numberOfSegments, animated: false)
+        }
+        self.selectedSegmentIndex = 0
+    }
+
 }
