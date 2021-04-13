@@ -632,26 +632,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新規会員登録" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wz-Kw-Srn">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfp-Dm-LTq">
-                                        <rect key="frame" x="0.0" y="63" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="54" width="390" height="54"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6NZ-vS-ohd">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD8-3e-nHE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必須です)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NM-5f-aY1">
-                                                        <rect key="frame" x="195" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="195" y="0.0" width="195" height="54"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
                                                         <nil key="highlightedColor"/>
@@ -674,25 +674,25 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="山田　太郎" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Fh-d4-VMe">
-                                        <rect key="frame" x="0.0" y="126" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="108" width="390" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-QN-tsz">
-                                        <rect key="frame" x="0.0" y="189" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="162" width="390" height="54"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-GQ-F5n">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-BU-cFK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必須です)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctv-Y0-m5X">
-                                                        <rect key="frame" x="195" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="195" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -713,25 +713,25 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="taro@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUU-Jm-NQV">
-                                        <rect key="frame" x="0.0" y="252" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="216" width="390" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bq2-mk-ffx">
-                                        <rect key="frame" x="0.0" y="315" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="270" width="390" height="54"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="emx-nu-dWf">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHa-R4-31M">
-                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必須です)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufr-1T-SKs">
-                                                        <rect key="frame" x="195" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="195" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -752,25 +752,25 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xEC-bv-YaI">
-                                        <rect key="frame" x="0.0" y="378" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="324" width="390" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhf-Pz-zD5">
-                                        <rect key="frame" x="0.0" y="441" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="378" width="390" height="54"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9eu-ve-yX4">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="63"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="パスワード確認" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk2-sQ-r2c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必須です)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-vh-t7G">
-                                                        <rect key="frame" x="195" y="0.0" width="195" height="63"/>
+                                                        <rect key="frame" x="195" y="0.0" width="195" height="54"/>
                                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -791,19 +791,58 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WnB-Dz-J9D">
-                                        <rect key="frame" x="0.0" y="504" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="432" width="390" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kx9-fH-v7c">
+                                        <rect key="frame" x="0.0" y="486" width="390" height="54"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eE6-De-gtf">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話番号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Kb-QD-LWg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="54"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(必須です)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9J-eU-pp2">
+                                                        <rect key="frame" x="195" y="0.0" width="195" height="54"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstItem="eE6-De-gtf" firstAttribute="top" secondItem="kx9-fH-v7c" secondAttribute="top" id="3Ek-wH-UNM"/>
+                                            <constraint firstItem="eE6-De-gtf" firstAttribute="width" secondItem="kx9-fH-v7c" secondAttribute="width" id="6io-cz-gNG"/>
+                                            <constraint firstItem="eE6-De-gtf" firstAttribute="height" secondItem="kx9-fH-v7c" secondAttribute="height" id="HLv-p2-Avx"/>
+                                            <constraint firstAttribute="trailing" secondItem="eE6-De-gtf" secondAttribute="trailing" id="RSh-Jv-G0K"/>
+                                            <constraint firstItem="eE6-De-gtf" firstAttribute="leading" secondItem="kx9-fH-v7c" secondAttribute="leading" id="RdJ-u2-YbU"/>
+                                            <constraint firstItem="eE6-De-gtf" firstAttribute="width" secondItem="kx9-fH-v7c" secondAttribute="width" id="f8P-gG-MCP"/>
+                                            <constraint firstAttribute="bottom" secondItem="eE6-De-gtf" secondAttribute="bottom" id="ss6-LR-W1n"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ShP-AB-atu" userLabel="tel_field">
+                                        <rect key="frame" x="0.0" y="540" width="390" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSw-tc-ePm">
-                                        <rect key="frame" x="0.0" y="567" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="594" width="390" height="54"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8e-2B-A9r">
-                                        <rect key="frame" x="0.0" y="630" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="648" width="390" height="54"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <state key="normal" title="登録">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -813,7 +852,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqp-s2-2Qm">
-                                        <rect key="frame" x="0.0" y="693" width="390" height="63"/>
+                                        <rect key="frame" x="0.0" y="702" width="390" height="54"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     </view>
                                 </subviews>
@@ -834,6 +873,7 @@
                         <outlet property="name_field" destination="4Fh-d4-VMe" id="ZHJ-W9-0Bk"/>
                         <outlet property="pass_conf_field" destination="WnB-Dz-J9D" id="WQI-uu-yxT"/>
                         <outlet property="pass_field" destination="xEC-bv-YaI" id="8as-4y-UYb"/>
+                        <outlet property="tel_field" destination="ShP-AB-atu" id="W97-Wz-8gA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsX-Xk-er7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

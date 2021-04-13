@@ -12,7 +12,8 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mail_field: UITextField!
     @IBOutlet weak var pass_field: UITextField!
     @IBOutlet weak var pass_conf_field: UITextField!
-   
+    @IBOutlet weak var tel_field: UITextField!
+    
    
     
     override func viewDidLoad() {
@@ -86,9 +87,10 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
                 "&password_confirmation=" + pass_conf_field.text!
             ).data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-               
+                
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    print(jsons)
                     if ((jsons["userData"]) != nil){
                         let dictionary = jsons["userData"] as! Dictionary<String, Any>
                     
