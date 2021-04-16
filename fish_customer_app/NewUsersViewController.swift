@@ -21,6 +21,7 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
         name_field.delegate = self
         mail_field.delegate = self
         pass_field.delegate = self
+        tel_field.delegate = self
         pass_conf_field.delegate = self
         pass_field.isSecureTextEntry = true
         pass_conf_field.isSecureTextEntry = true
@@ -28,6 +29,9 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func add_user(_ sender: Any) {
@@ -39,6 +43,15 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
         }
         if(mail_field.text == ""){
             error_messages.append("メールアドレスは必須です。")
+        }
+        if(isValidEmail(mail_field.text!) == false){
+            error_messages.append("メールアドレスが不正です。")
+        }
+        if(isValidTel(tel_field.text!) == false){
+            error_messages.append("電話番号が不正です。")
+        }
+        if(mail_field.text == ""){
+            error_messages.append("電話番号は必須です。")
         }
         if(isValidEmail(mail_field.text!) == false){
             error_messages.append("メールアドレスが不正です。")
@@ -83,23 +96,28 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
             request.httpBody = (
                 "name=" + name_field.text! +
                 "&email=" + mail_field.text! +
+                "&tel=" + tel_field.text! +
                 "&password=" + pass_field.text! +
                 "&password_confirmation=" + pass_conf_field.text!
             ).data(using: .utf8)
-            let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request, completionHandler: { [self] (data, response, error) in
                 
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
-                    print(jsons)
+                    
+                
                     if ((jsons["userData"]) != nil){
                         let dictionary = jsons["userData"] as! Dictionary<String, Any>
-                    
+                       
                         user_data["id"] = dictionary["id"] as AnyObject?
                         user_data["name"] = dictionary["name"] as AnyObject?
                         user_data["email"] = dictionary["email"] as AnyObject?
+                        user_data["tel"] = jsons["tel"] as AnyObject?
                         user_data["orders"] = dictionary["orders"] as AnyObject?
                         print(user_data)
                         DispatchQueue.main.sync {
+                            user_email = mail_field.text!
+                            user_password = pass_field.text!
                             let alert:UIAlertController = UIAlertController(title: "確認", message: "登録しました。", preferredStyle: .alert)
                             let action = UIAlertAction(title: "閉じる", style: .default, handler: {(action: UIAlertAction!)-> Void in
                                 self.navigationController?.popViewController(animated: true)
@@ -109,8 +127,13 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                     else{
+                        let obj = jsons["message"] as! Array<Any>
                         DispatchQueue.main.sync {
-                            let alert:UIAlertController = UIAlertController(title: "確認", message: "失敗しました。", preferredStyle: .alert)
+                            var message:String = ""
+                            for i in 0...obj.count-1{
+                                message += obj[i] as! String + "\n"
+                            }
+                            let alert:UIAlertController = UIAlertController(title: "確認", message: message, preferredStyle: .alert)
                             let action = UIAlertAction(title: "閉じる", style: .default, handler: nil)
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
@@ -129,6 +152,13 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
             let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
             let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             let result = emailTest.evaluate(with: string)
+            return result
+     }
+    /*電話番号の正規表現*/
+    func isValidTel(_ string: String) -> Bool {
+            let telRegEx = "^\\d{2,4}\\d{1,4}\\d{4}$"
+            let telTest = NSPredicate(format:"SELF MATCHES %@", telRegEx)
+            let result = telTest.evaluate(with: string)
             return result
      }
     
