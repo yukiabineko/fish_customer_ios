@@ -112,7 +112,7 @@ class NewUsersViewController: UIViewController, UITextFieldDelegate {
                         user_data["id"] = dictionary["id"] as AnyObject?
                         user_data["name"] = dictionary["name"] as AnyObject?
                         user_data["email"] = dictionary["email"] as AnyObject?
-                        user_data["tel"] = jsons["tel"] as AnyObject?
+                        user_data["tel"] = dictionary["tel"] as AnyObject?
                         user_data["orders"] = dictionary["orders"] as AnyObject?
                         print(user_data)
                         DispatchQueue.main.sync {

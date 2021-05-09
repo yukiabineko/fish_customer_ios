@@ -19,8 +19,8 @@ class UserEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user_email)
-        print(user_password)
+        pass_field.isSecureTextEntry = true
+        pass_conf_field.isSecureTextEntry = true
         
         if((user_data["name"]) != nil){
             name_field.text = (user_data["name"] as! String)
