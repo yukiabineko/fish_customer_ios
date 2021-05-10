@@ -54,8 +54,8 @@ class UserEditViewController: UIViewController {
             
             if((data) != nil){
                 let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
-                print("データ")
-                print(jsons)
+                print("変更前")
+                print(user_data["tel"] as Any)
             
                 if ((jsons["userData"]) != nil){
                     let dictionary = jsons["userData"] as! Dictionary<String, Any>

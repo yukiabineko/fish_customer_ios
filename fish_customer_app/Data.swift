@@ -97,6 +97,7 @@ class MyData{
                     user_data["name"] = jsons["name"] as AnyObject?
                     user_data["email"] = jsons["email"] as AnyObject?
                     user_data["orders"] = jsons["orders"] as AnyObject?
+                    user_data["tel"] = jsons["tel"] as AnyObject?
                     
                 }
             })
