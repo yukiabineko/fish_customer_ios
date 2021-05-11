@@ -11,6 +11,10 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
    
     @IBOutlet weak var nameTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mailLabel: UILabel!
+    @IBOutlet weak var mailtitle: UILabel!
+    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var teltitle: UILabel!
     @IBOutlet weak var orderTitle: UILabel!
     @IBOutlet weak var orderLabel: UILabel!
     let datas = MyData().orderUser()
@@ -18,17 +22,28 @@ class UserViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let labelArray = [nameLabel, nameTitle,orderTitle, orderLabel]
+        let labelArray = [nameLabel, nameTitle,orderTitle, orderLabel, mailtitle, teltitle,telLabel,mailLabel]
         for i in 0...labelArray.count-1{
             labelArray[i]?.layer.borderWidth = 1
             labelArray[i]?.layer.borderColor = UIColor.lightGray.cgColor
         }
         if(!(user_data["name"] == nil)){
+            print("電話")
+            print(user_data["tel"] as! String)
             nameLabel.text = (user_data["name"] as! String)
+            mailtitle.text = (user_data["email"] as! String)
+            teltitle.text =  (user_data["tel"] as! String)
             orderLabel.text = String(MyData().orderCount())
         }
        
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        nameLabel.text = (user_data["name"] as! String)
+        mailtitle.text = (user_data["email"] as! String)
+        teltitle.text =  (user_data["tel"] as! String)
+        orderLabel.text = String(MyData().orderCount())
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MyData().orderCount()

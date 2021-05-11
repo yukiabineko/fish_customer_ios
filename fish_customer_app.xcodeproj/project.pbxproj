@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		001ECEB925D02C9C0089BC25 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001ECEB825D02C9C0089BC25 /* LoginViewController.swift */; };
+		00208554262799260062159A /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00208553262799260062159A /* UserEditViewController.swift */; };
 		0022B62D25D7EEF800F9C5F1 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */; };
 		003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003733ED25CEDC8300858951 /* ItemViewController.swift */; };
 		003733F625CEDDA500858951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003733F525CEDDA500858951 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		001ECEB825D02C9C0089BC25 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		00208553262799260062159A /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		0022B62C25D7EEF800F9C5F1 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		003733ED25CEDC8300858951 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		003733F525CEDDA500858951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				0051771F25CE729D00902225 /* Info.plist */,
 				003EEE4925D0A01700201C23 /* Data.swift */,
 				00BC676025D1614B00758DE6 /* fish_customer_app-Bridging-Header.h */,
+				00208553262799260062159A /* UserEditViewController.swift */,
 			);
 			path = fish_customer_app;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0051771625CE729C00902225 /* ViewController.swift in Sources */,
+				00208554262799260062159A /* UserEditViewController.swift in Sources */,
 				00941B0025DA084D00C441FD /* UserViewController.swift in Sources */,
 				003733EE25CEDC8300858951 /* ItemViewController.swift in Sources */,
 				00A36CF225CF857C00F3B5E4 /* NewItemViewController.swift in Sources */,

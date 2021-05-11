@@ -91,8 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             pass_validate.isHidden = true
             
             
-            user_email = mail_field.text!
-            user_password = pass_field.text!
+            
             let url = URL(string: "https://uematsu-backend.herokuapp.com/sessions")!
             var request = URLRequest(url:  url)
             request.httpMethod = "POST"
@@ -101,16 +100,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                
                 if((data) != nil){
                     let jsons = try! JSONSerialization.jsonObject(with: data!) as! Dictionary<String, Any>
+                    print("テスト")
                     print(jsons)
                     user_data["id"] = jsons["id"] as AnyObject?
                     user_data["name"] = jsons["name"] as AnyObject?
                     user_data["email"] = jsons["email"] as AnyObject?
+                    user_data["tel"] = jsons["tel"] as AnyObject?
                     user_data["orders"] = jsons["orders"] as AnyObject?
+                    print(user_data["tel"] as Any)
+                    print(user_data["name"] as Any)
                     
                     DispatchQueue.main.sync {
                       
                         if(!(user_data["name"] == nil)){
                             /*サーバー通信成功かつログイン成功*/
+                            user_email = mail_field.text!
+                            user_password = pass_field.text!
                             let alert:UIAlertController = UIAlertController(title: "確認", message: "ログインしました。", preferredStyle: .alert)
                             let action = UIAlertAction(title: "閉じる", style: .default, handler: {(action: UIAlertAction!)-> Void in
                                 self.navigationController?.popViewController(animated: true)
